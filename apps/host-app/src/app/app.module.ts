@@ -4,18 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
+import { WelcomeContainerComponent } from './containers/welcome-container/welcome-container.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WelcomeContainerComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       [
-        //{
-        // path: 'admin-app',
-        // loadChildren: () =>
-        //   import('admin-app/Module').then((m) => m.RemoteEntryModule),
-        //},
+        {
+          path: '',
+          component: WelcomeContainerComponent
+        },
         {
           path: 'admin-app',
           loadChildren: () => loadRemoteModule({

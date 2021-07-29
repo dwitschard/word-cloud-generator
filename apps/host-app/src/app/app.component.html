@@ -1,7 +1,8 @@
 <h1>Host App</h1>
 
-<ul>
-  <li><a routerLink='admin-app'>Admin App</a></li>
-</ul>
+<div class='topnav'>
+  <a routerLinkActive='active' [routerLinkActiveOptions]='{exact: true}' routerLink='/'>Home</a>
+  <a routerLinkActive='active' routerLink='admin-app'>Admin App</a>
+</div>
 
 <router-outlet></router-outlet>
