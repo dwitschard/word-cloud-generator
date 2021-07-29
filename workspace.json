@@ -129,6 +129,28 @@
         }
       }
     },
+    "component-lib": {
+      "root": "libs/component-lib",
+      "sourceRoot": "libs/component-lib/src",
+      "projectType": "library",
+      "generators": {
+        "@nxext/stencil:component": {
+          "style": "scss"
+        }
+      },
+      "targets": {
+        "test": {
+          "executor": "@nxext/stencil:test",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "tsConfig": "libs/component-lib/tsconfig.lib.json",
+            "configPath": "libs/component-lib/stencil.config.ts",
+            "outputPath": "dist/libs/component-lib"
+          }
+        }
+      }
+    },
     "host-app": {
       "projectType": "application",
       "root": "apps/host-app",

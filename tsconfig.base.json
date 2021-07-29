@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@word-cloud-generator/component-lib": ["dist/libs/component-lib"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
