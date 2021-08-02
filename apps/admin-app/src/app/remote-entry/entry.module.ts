@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
@@ -14,5 +14,7 @@ import { RemoteEntryComponent } from './entry.component';
     ]),
   ],
   providers: [],
+  // The CUSTOM_ELEMENTS_SCHEMA needs to be included in any module that uses custom elements.
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class RemoteEntryModule {}

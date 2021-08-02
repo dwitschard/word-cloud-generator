@@ -22,7 +22,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('admin-app');
   });
 
-  it('should render title', () => {
+  it('should render header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;

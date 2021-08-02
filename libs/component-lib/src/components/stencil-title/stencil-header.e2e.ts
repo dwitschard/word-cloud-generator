@@ -4,7 +4,7 @@ describe('stencil-title', () => {
   it('renders', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<stencil-title></stencil-title>');
+    await page.setContent('<stencil-header></stencil-header>');
     const element = await page.find('stencil-title');
     expect(element).toHaveClass('hydrated');
   });
@@ -12,9 +12,9 @@ describe('stencil-title', () => {
   it('renders changes to the name data', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<stencil-title></stencil-title>');
+    await page.setContent('<stencil-header></stencil-header>');
     const component = await page.find('stencil-title');
-    const element = await page.find('stencil-title >>> div');
+    const element = await page.find('stencil-header >>> div');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
     component.setProperty('first', 'James');

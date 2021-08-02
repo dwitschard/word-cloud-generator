@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@word-cloud-generator/component-lib": ["dist/libs/component-lib"]
+      "@word-cloud-generator/component-lib": ["dist/libs/component-lib/dist/component-lib"],
+      "@word-cloud-generator/component-lib/loader": ["dist/libs/component-lib/dist/loader"],
+      "@word-cloud-generator/component-lib/component-lib-angular": ["dist/generated/component-lib-angular/src/components.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

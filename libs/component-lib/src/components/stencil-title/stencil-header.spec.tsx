@@ -1,11 +1,11 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { StencilTitle } from './stencil-title';
+import { StencilHeader } from './stencil-header.component';
 
-describe('stencil-title', () => {
+describe('stencil-header', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [StencilTitle],
-      html: '<stencil-title></stencil-title>',
+      components: [StencilHeader],
+      html: '<stencil-header></stencil-header>',
     });
     expect(root).toEqualHtml(`
       <stencil-title>
@@ -20,7 +20,7 @@ describe('stencil-title', () => {
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [StencilTitle],
+      components: [StencilHeader],
       html: `<stencil-title first="Stencil" last="'Don't call me a framework' JS"></stencil-title>`,
     });
     expect(root).toEqualHtml(`

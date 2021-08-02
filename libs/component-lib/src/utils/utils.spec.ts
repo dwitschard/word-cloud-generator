@@ -5,15 +5,15 @@ describe('format', () => {
     expect(format(undefined, undefined, undefined)).toEqual('');
   });
 
-  it('formats just title names', () => {
+  it('formats just header names', () => {
     expect(format('Joseph', undefined, undefined)).toEqual('Joseph');
   });
 
-  it('formats title and last names', () => {
+  it('formats header and last names', () => {
     expect(format('Joseph', undefined, 'Publique')).toEqual('Joseph Publique');
   });
 
-  it('formats title, middle and last names', () => {
+  it('formats header, middle and last names', () => {
     expect(format('Joseph', 'Quincy', 'Publique')).toEqual(
       'Joseph Quincy Publique'
     );

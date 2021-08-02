@@ -1,18 +1,18 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'stencil-title',
-  styleUrl: 'stencil-title.scss',
+  tag: 'stencil-header',
+  styleUrl: 'stencil-header.scss',
   shadow: true
 })
-export class StencilTitle {
+export class StencilHeader {
   /**
-   * The title name
+   * The header name
    */
-  @Prop() title: string;
+  @Prop() header: string;
 
   private getText(): string {
-    return `${this.title}`;
+    return `${this.header}`;
   }
 
   render() {
