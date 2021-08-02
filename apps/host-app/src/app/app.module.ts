@@ -23,6 +23,14 @@ import { WelcomeContainerComponent } from './containers/welcome-container/welcom
             remoteName: 'admin_app',
             exposedModule: './Module'
           }).then(m => m.RemoteEntryModule)
+        },
+        {
+          path: 'word-cloud-viewer-app',
+          loadChildren: () => loadRemoteModule({
+            remoteEntry: 'http://localhost:4200/remoteEntry.js',
+            remoteName: 'word-cloud-viewer_app',
+            exposedModule: './web-components'
+          }).then(m => m.RemoteEntryModule)
         }
       ],
       { initialNavigation: 'enabledBlocking' }
