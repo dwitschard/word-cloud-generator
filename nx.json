@@ -38,7 +38,8 @@
       "tags": []
     },
     "host-app": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["admin-app"]
     },
     "host-app-e2e": {
       "tags": [],
