@@ -295,6 +295,133 @@
         }
       }
     },
+    "word-cloud-app": {
+      "projectType": "application",
+      "root": "apps/word-cloud-app",
+      "sourceRoot": "apps/word-cloud-app/src",
+      "prefix": "word-cloud-generator",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:webpack-browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/word-cloud-app",
+            "index": "apps/word-cloud-app/src/index.html",
+            "main": "apps/word-cloud-app/src/main.ts",
+            "polyfills": "apps/word-cloud-app/src/polyfills.ts",
+            "tsConfig": "apps/word-cloud-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/word-cloud-app/src/favicon.ico",
+              "apps/word-cloud-app/src/assets"
+            ],
+            "styles": ["apps/word-cloud-app/src/styles.scss"],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "apps/word-cloud-app/webpack.config.js"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/word-cloud-app/src/environments/environment.ts",
+                  "with": "apps/word-cloud-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "customWebpackConfig": {
+                "path": "apps/word-cloud-app/webpack.prod.config.js"
+              }
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "executor": "@nrwl/angular:webpack-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "word-cloud-app:build:production"
+            },
+            "development": {
+              "browserTarget": "word-cloud-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 5002
+          }
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "word-cloud-app:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/word-cloud-app/src/**/*.ts",
+              "apps/word-cloud-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/word-cloud-app"],
+          "options": {
+            "jestConfig": "apps/word-cloud-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "word-cloud-app-e2e": {
+      "root": "apps/word-cloud-app-e2e",
+      "sourceRoot": "apps/word-cloud-app-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/word-cloud-app-e2e/cypress.json",
+            "devServerTarget": "word-cloud-app:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "word-cloud-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/word-cloud-app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "word-cloud-viewer-app": {
       "root": "apps/word-cloud-viewer-app",
       "sourceRoot": "apps/word-cloud-viewer-app/src",
