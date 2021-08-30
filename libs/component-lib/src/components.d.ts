@@ -12,6 +12,9 @@ export namespace Components {
          */
         "header": string;
     }
+    interface WordCloud {
+        "words": string[];
+    }
 }
 declare global {
     interface HTMLStencilHeaderElement extends Components.StencilHeader, HTMLStencilElement {
@@ -20,8 +23,15 @@ declare global {
         prototype: HTMLStencilHeaderElement;
         new (): HTMLStencilHeaderElement;
     };
+    interface HTMLWordCloudElement extends Components.WordCloud, HTMLStencilElement {
+    }
+    var HTMLWordCloudElement: {
+        prototype: HTMLWordCloudElement;
+        new (): HTMLWordCloudElement;
+    };
     interface HTMLElementTagNameMap {
         "stencil-header": HTMLStencilHeaderElement;
+        "word-cloud": HTMLWordCloudElement;
     }
 }
 declare namespace LocalJSX {
@@ -31,8 +41,12 @@ declare namespace LocalJSX {
          */
         "header"?: string;
     }
+    interface WordCloud {
+        "words"?: string[];
+    }
     interface IntrinsicElements {
         "stencil-header": StencilHeader;
+        "word-cloud": WordCloud;
     }
 }
 export { LocalJSX as JSX };
@@ -40,6 +54,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "stencil-header": LocalJSX.StencilHeader & JSXBase.HTMLAttributes<HTMLStencilHeaderElement>;
+            "word-cloud": LocalJSX.WordCloud & JSXBase.HTMLAttributes<HTMLWordCloudElement>;
         }
     }
 }

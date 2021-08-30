@@ -1,0 +1,13 @@
+@mixin wordSize($weight: 1) {
+
+}
+
+
+span {
+  font-size: attr(data-weight integer);
+  display: block;
+}
+
+span:after {
+  content: "" attr(data-weight);
+}
