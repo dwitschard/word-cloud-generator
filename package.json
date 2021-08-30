@@ -71,7 +71,7 @@
     "@nrwl/web": "12.6.3",
     "@nrwl/workspace": "12.6.2",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.0-rc.2",
-    "@stencil/core": "^2.6.0",
+    "@stencil/core": "~2.6.0",
     "@stencil/sass": "1.4.1",
     "@testing-library/react": "11.2.6",
     "@types/jest": "26.0.24",

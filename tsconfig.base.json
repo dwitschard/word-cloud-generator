@@ -22,7 +22,7 @@
         "dist/generated/component-lib-angular/src/components.ts"
       ],
       "@word-cloud-generator/component-lib/loader": [
-        "dist/libs/component-lib/dist/loader"
+        "loader/loader"
       ]
     }
   },
