@@ -26,7 +26,7 @@ module.exports = {
       name: 'word_cloud_app',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': 'apps/word-cloud-app/src/app/remote-entry/entry.module.ts',
+        './Module': 'apps/word-cloud-app/src/app/remote-entry/remote-entry.module.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

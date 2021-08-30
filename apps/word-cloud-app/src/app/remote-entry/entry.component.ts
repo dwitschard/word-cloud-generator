@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'adm-word-cloud-generator-app-entry',
   template: `<div class="remote-entry">
-    <h2>word-cloud's Remote Entry Component</h2>
+    <word-cloud-generator-word-cloud></word-cloud-generator-word-cloud>
     <stencil-header header='Angular meets Stencil!'></stencil-header>
   </div>`,
   styles: [

@@ -2,9 +2,10 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
+import { WordCloudComponent } from '../word-cloud/word-cloud.component';
 
 @NgModule({
-  declarations: [RemoteEntryComponent],
+  declarations: [RemoteEntryComponent, WordCloudComponent],
   imports: [
     RouterModule.forChild([
       {
