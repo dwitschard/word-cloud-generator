@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppWord {
+        "weight": number;
+    }
     interface StencilHeader {
         /**
           * The header name
@@ -17,6 +20,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppWordElement extends Components.AppWord, HTMLStencilElement {
+    }
+    var HTMLAppWordElement: {
+        prototype: HTMLAppWordElement;
+        new (): HTMLAppWordElement;
+    };
     interface HTMLStencilHeaderElement extends Components.StencilHeader, HTMLStencilElement {
     }
     var HTMLStencilHeaderElement: {
@@ -30,11 +39,15 @@ declare global {
         new (): HTMLWordCloudElement;
     };
     interface HTMLElementTagNameMap {
+        "app-word": HTMLAppWordElement;
         "stencil-header": HTMLStencilHeaderElement;
         "word-cloud": HTMLWordCloudElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppWord {
+        "weight"?: number;
+    }
     interface StencilHeader {
         /**
           * The header name
@@ -45,6 +58,7 @@ declare namespace LocalJSX {
         "words"?: string[];
     }
     interface IntrinsicElements {
+        "app-word": AppWord;
         "stencil-header": StencilHeader;
         "word-cloud": WordCloud;
     }
@@ -53,6 +67,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-word": LocalJSX.AppWord & JSXBase.HTMLAttributes<HTMLAppWordElement>;
             "stencil-header": LocalJSX.StencilHeader & JSXBase.HTMLAttributes<HTMLStencilHeaderElement>;
             "word-cloud": LocalJSX.WordCloud & JSXBase.HTMLAttributes<HTMLWordCloudElement>;
         }

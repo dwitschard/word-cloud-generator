@@ -46,21 +46,12 @@ export class WordCloud {
     );
   }
 
-  private style = (word: Word) => ({
-    "font-size": `${word.weight * 0.4 + 0.5}rem`
-  })
-
   render() {
     return (
       <Host>
-        <ul id="myList">
-          {this.weightedWords.map((word) =>
-            <li
-              data-weight={word.weight}
-              style={this.style(word)}
-            >{word.text}</li>
-          )}
-        </ul>
+        {this.weightedWords.map(word =>
+          <app-word weight={word.weight}>{word.text}</app-word>
+        )}
       </Host>
     );
   }
