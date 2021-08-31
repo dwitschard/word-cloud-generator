@@ -1,16 +1,6 @@
-ul {
+:host {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-li {
-  list-style: none;
-  padding: 10px;
-}
-
-li::after {
-  content: " (" attr(data-weight) ")";
-  font-size: 0.8rem;
 }
