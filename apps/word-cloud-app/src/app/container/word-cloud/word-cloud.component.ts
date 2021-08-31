@@ -1,19 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'word-cloud-generator-word-cloud',
   templateUrl: './word-cloud.component.html',
   styleUrls: ['./word-cloud.component.scss']
 })
-export class WordCloudComponent implements OnInit {
+export class WordCloudComponent {
 
   words: string[] = [
-    "windy","invite","doubtful","jagged","rare","shocking","wrong","volleyball","permissible","proud","earn","complete","expansion","route","guarantee","unruly","fortunate","questionable","treatment","prevent","belligerent","meat","graceful","narrow","lighten","wistful","page","look","secret","utter","tendency","add","cherry","exuberant","psychotic","moor","answer","relation","organic","unlock","bloody","cycle","fear","song","murder","remember","quizzical","special","cabbage"
+    "windy","windy", "windy","windy","proud","earn","earn","earn","earn","earn","complete","expansion","route","guarantee","unruly","secret","secret","secret","secret","secret","secret","secret","secret","secret","utter","tendency","tendency","tendency","tendency","tendency","tendency","add","cherry","exuberant","psychotic","moor","answer"
   ]
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
