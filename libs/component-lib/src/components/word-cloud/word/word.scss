@@ -1,3 +1,40 @@
-:host {
+.wrapper {
+  display: block;
   padding: 10px;
+  font-size: 1em;
+  transition: all .5s ease;
+  animation: scale-up-center 1s;
+}
+
+.wrapper:hover {
+  transform: scale(1.2);
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.weight-badge {
+  font-size: 0.8rem;
+  border: 1px solid black;
+  padding: 0 3px;
+  border-radius: 5px;
+  margin: 5px;
 }
