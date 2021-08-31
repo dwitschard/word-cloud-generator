@@ -39,11 +39,18 @@
     },
     "host-app": {
       "tags": [],
-      "implicitDependencies": ["admin-app", "word-cloud-viewer-app"]
+      "implicitDependencies": ["admin-app", "word-cloud-app"]
     },
     "host-app-e2e": {
       "tags": [],
       "implicitDependencies": ["host-app"]
+    },
+    "word-cloud-app": {
+      "tags": []
+    },
+    "word-cloud-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["word-cloud-app"]
     },
     "word-cloud-viewer-app": {
       "tags": []
