@@ -3,10 +3,14 @@ import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
 import { WordCloudComponent } from '../container/word-cloud/word-cloud.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [RemoteEntryComponent, WordCloudComponent],
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '',

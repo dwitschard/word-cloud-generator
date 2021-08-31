@@ -1,13 +1,12 @@
-@mixin wordSize($weight: 1) {
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 
-}
-
-
-span {
-  font-size: attr(data-weight integer);
-  display: block;
-}
-
-span:after {
-  content: "" attr(data-weight);
+  select {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
 }
