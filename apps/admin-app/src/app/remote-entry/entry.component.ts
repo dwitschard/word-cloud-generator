@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'adm-word-cloud-generator-admin-app-entry',
-  template: `<div class="remote-entry">
-    <h2>admin-app's Remote Entry Component</h2>
-    <stencil-header header='Angular meets Stencil!'></stencil-header>
-  </div>`,
+  template: `
+    <div class="remote-entry">
+      <adm-app-word-form></adm-app-word-form>
+    </div>`,
   styles: [
     `
       .remote-entry {

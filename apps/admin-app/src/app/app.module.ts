@@ -10,23 +10,22 @@ import { environment } from '../environments/environment';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {WordsService} from "./words.service";
+import {RemoteEntryModule} from "./remote-entry/entry.module";
 // import {WordListComponent} from "./word-list/word-list.component";
 
 @NgModule({
-  declarations: [AppComponent, WordFormComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    RemoteEntryModule,
     RouterModule.forRoot([
       {
         path: '',
         loadChildren: () => import('./remote-entry/entry.module').then((m) => m.RemoteEntryModule),
       },
     ], {initialNavigation: 'enabledBlocking'}),
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
   ],
-  providers: [WordsService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

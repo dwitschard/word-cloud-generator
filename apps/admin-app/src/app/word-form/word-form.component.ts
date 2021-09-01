@@ -4,7 +4,7 @@ import {WordsService} from "../words.service";
 
 
 @Component({
-  selector: 'app-word-form',
+  selector: 'adm-app-word-form',
   templateUrl: './word-form.component.html',
   styleUrls: ['./word-form.component.scss']
 })

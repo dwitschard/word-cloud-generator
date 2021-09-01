@@ -5,6 +5,10 @@ import { RemoteEntryComponent } from './entry.component';
 import { WordCloudComponent } from '../container/word-cloud/word-cloud.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {WordsService} from "../services/words.service";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../../../../admin-app/src/environments/environment";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
 @NgModule({
   declarations: [RemoteEntryComponent, WordCloudComponent],
@@ -17,8 +21,10 @@ import {CommonModule} from "@angular/common";
         component: RemoteEntryComponent,
       },
     ]),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [WordsService],
   // The CUSTOM_ELEMENTS_SCHEMA needs to be included in any module that uses custom elements.
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

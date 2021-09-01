@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "",
+    apiKey: "AIzaSyAIGM0FQfrdr1xXHCYd1xlwwHkkVKqgro4",
     authDomain: "jap-wordcloud.firebaseapp.com",
     databaseURL: "https://jap-wordcloud-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "jap-wordcloud",

@@ -1,7 +1,7 @@
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import {Word} from "../../../../libs/shared/models/word";
-import {FormControl, FormGroup} from "@angular/forms";
 import {Injectable} from "@angular/core";
+import {Word} from "../../../../../libs/shared/models/word";
+import {Observable} from "rxjs";
 
 
 export interface Observer {
@@ -14,11 +14,6 @@ export class WordsService {
   constructor(   private firestore: AngularFirestore   ) {
     this.observers = new Set();
   }
-
-  form = new FormGroup({
-      text: new FormControl('')
-      // weight: new FormControl(0),
-  })
 
   subscribe (observer: Observer) {
     this.observers.add(observer)
@@ -47,9 +42,8 @@ export class WordsService {
     });
   }
 
-  getWords() {
-    return
-    this.firestore.collection("words").snapshotChanges();
+  getWords(): Observable<Word[]> {
+    return this.firestore.collection<Word>("words").valueChanges();
   }
 
 }
