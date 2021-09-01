@@ -1,0 +1,12 @@
+<div>
+  <h1>Word Collector</h1>
+    <form [formGroup]="this.wordsService.form" (ngSubmit)="onSubmit()">
+      <input placeholder="Word"
+             formControlName="text"
+             type="text">
+<!--      <input placeholder="Weight"-->
+<!--             formControlName="weight"-->
+<!--             type="text">-->
+    <button type="button" class="btn btn-default" (click)="onSubmit()">Add Word</button>
+    </form>
+</div>
