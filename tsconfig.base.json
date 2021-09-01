@@ -21,9 +21,7 @@
       "@word-cloud-generator/component-lib/component-lib-angular": [
         "dist/generated/component-lib-angular/src/components.ts"
       ],
-      "@word-cloud-generator/component-lib/loader": [
-        "loader/loader"
-      ]
+      "@word-cloud-generator/component-lib/loader": ["loader/loader"]
     }
   },
   "exclude": ["node_modules", "tmp"]

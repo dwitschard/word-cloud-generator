@@ -1,21 +1,20 @@
 import { newE2EPage } from '@stencil/core/testing';
-import {describe, expect, it} from '@jest/globals';
 
-describe('stencil-title', () => {
+describe('word-cloud', () => {
   it('renders', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<stencil-header></stencil-header>');
-    const element = await page.find('stencil-title');
+    await page.setContent('<word-cloud></word-cloud>');
+    const element = await page.find('word-cloud');
     expect(element).toHaveClass('hydrated');
   });
 
   it('renders changes to the name data', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<stencil-header></stencil-header>');
-    const component = await page.find('stencil-title');
-    const element = await page.find('stencil-header >>> div');
+    await page.setContent('<word-cloud></word-cloud>');
+    const component = await page.find('word-cloud');
+    const element = await page.find('word-cloud >>> div');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
     component.setProperty('first', 'James');

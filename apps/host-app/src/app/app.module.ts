@@ -16,6 +16,7 @@ import { WelcomeContainerComponent } from './containers/welcome-container/welcom
           path: '',
           component: WelcomeContainerComponent
         },
+
         {
           path: 'admin-app',
           loadChildren: () => loadRemoteModule({
@@ -27,9 +28,9 @@ import { WelcomeContainerComponent } from './containers/welcome-container/welcom
         {
           path: 'word-cloud-viewer-app',
           loadChildren: () => loadRemoteModule({
-            remoteEntry: 'http://localhost:4200/remoteEntry.js',
-            remoteName: 'word-cloud-viewer_app',
-            exposedModule: './web-components'
+            remoteEntry: 'http://localhost:5002/remoteEntry.js',
+            remoteName: 'word_cloud_app',
+            exposedModule: './Module'
           }).then(m => m.RemoteEntryModule)
         }
       ],
