@@ -9,6 +9,9 @@ export namespace Components {
     interface AppWord {
         "weight": number;
     }
+    interface InputField {
+        "value": string;
+    }
     interface StencilHeader {
         /**
           * The header name
@@ -26,6 +29,12 @@ declare global {
         prototype: HTMLAppWordElement;
         new (): HTMLAppWordElement;
     };
+    interface HTMLInputFieldElement extends Components.InputField, HTMLStencilElement {
+    }
+    var HTMLInputFieldElement: {
+        prototype: HTMLInputFieldElement;
+        new (): HTMLInputFieldElement;
+    };
     interface HTMLStencilHeaderElement extends Components.StencilHeader, HTMLStencilElement {
     }
     var HTMLStencilHeaderElement: {
@@ -40,6 +49,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-word": HTMLAppWordElement;
+        "input-field": HTMLInputFieldElement;
         "stencil-header": HTMLStencilHeaderElement;
         "word-cloud": HTMLWordCloudElement;
     }
@@ -47,6 +57,10 @@ declare global {
 declare namespace LocalJSX {
     interface AppWord {
         "weight"?: number;
+    }
+    interface InputField {
+        "onOnInputEvent"?: (event: CustomEvent<string>) => void;
+        "value"?: string;
     }
     interface StencilHeader {
         /**
@@ -59,6 +73,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-word": AppWord;
+        "input-field": InputField;
         "stencil-header": StencilHeader;
         "word-cloud": WordCloud;
     }
@@ -68,6 +83,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-word": LocalJSX.AppWord & JSXBase.HTMLAttributes<HTMLAppWordElement>;
+            "input-field": LocalJSX.InputField & JSXBase.HTMLAttributes<HTMLInputFieldElement>;
             "stencil-header": LocalJSX.StencilHeader & JSXBase.HTMLAttributes<HTMLStencilHeaderElement>;
             "word-cloud": LocalJSX.WordCloud & JSXBase.HTMLAttributes<HTMLWordCloudElement>;
         }
