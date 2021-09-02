@@ -1,5 +1,5 @@
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import {Word} from "../../../../libs/shared/models/word";
+import {Word} from "../../../../libs/shared/word-service/src/lib/models/word";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Injectable} from "@angular/core";
 
@@ -9,7 +9,7 @@ export interface Observer {
 }
 
 @Injectable()
-export class WordsService {
+export class WordFormService {
   private observers: Set<Observer>;
   constructor(   private firestore: AngularFirestore   ) {
     this.observers = new Set();

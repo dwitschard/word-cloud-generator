@@ -7,7 +7,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../../environments/environment";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
-import {WordsService} from "../words.service";
+import {WordFormService} from "../word-form.service";
 
 @NgModule({
   declarations: [RemoteEntryComponent, WordFormComponent],
@@ -22,7 +22,7 @@ import {WordsService} from "../words.service";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [WordsService],
+  providers: [WordFormService],
   // The CUSTOM_ELEMENTS_SCHEMA needs to be included in any module that uses custom elements.
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

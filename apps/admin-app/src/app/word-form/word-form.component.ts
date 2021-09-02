@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
-import {WordsService} from "../words.service";
+import {WordService} from "@word-cloud-generator/shared/word-service";
+import {WordFormService} from "../word-form.service";
 
 
 @Component({
@@ -13,16 +13,16 @@ import {WordsService} from "../words.service";
 export class WordFormComponent {
 
 
-  constructor(public wordsService: WordsService){}
+  constructor(public wordsService: WordService, public wordFormService: WordFormService){}
 
   onSubmit() {
-    const newWord = this.wordsService.form.value;
+    const newWord = this.wordFormService.form.value;
 
     this.wordsService.createWord(newWord)
       .then(res => {
         console.log(res)
       });
-    this.wordsService.form.reset()
+    this.wordFormService.form.reset()
   }
 
 }

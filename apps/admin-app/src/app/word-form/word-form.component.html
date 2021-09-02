@@ -1,6 +1,6 @@
 <div>
   <h1>Word Collector</h1>
-    <form [formGroup]="this.wordsService.form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="this.wordFormService.form" (ngSubmit)="onSubmit()">
       <input placeholder="Word"
              formControlName="text"
              type="text">

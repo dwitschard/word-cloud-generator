@@ -1,11 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { RemoteEntryComponent } from './entry.component';
-import { WordCloudComponent } from '../container/word-cloud/word-cloud.component';
+import {RemoteEntryComponent} from './entry.component';
+import {WordCloudComponent} from '../container/word-cloud/word-cloud.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {WordsService} from "../services/words.service";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../../../../admin-app/src/environments/environment";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
@@ -24,7 +23,7 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
   ],
-  providers: [WordsService],
+  providers: [],
   // The CUSTOM_ELEMENTS_SCHEMA needs to be included in any module that uses custom elements.
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

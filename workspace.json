@@ -295,6 +295,31 @@
         }
       }
     },
+    "shared-word-service": {
+      "projectType": "library",
+      "root": "libs/shared/word-service",
+      "sourceRoot": "libs/shared/word-service/src",
+      "prefix": "word-cloud-generator",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/word-service"],
+          "options": {
+            "jestConfig": "libs/shared/word-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/word-service/src/**/*.ts",
+              "libs/shared/word-service/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "word-cloud-app": {
       "projectType": "application",
       "root": "apps/word-cloud-app",

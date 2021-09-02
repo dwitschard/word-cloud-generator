@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { environment } from '../environments/environment';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
-import {WordsService} from "./words.service";
+import {WordFormService} from "./word-form.service";
 import {RemoteEntryModule} from "./remote-entry/entry.module";
 // import {WordListComponent} from "./word-list/word-list.component";
 

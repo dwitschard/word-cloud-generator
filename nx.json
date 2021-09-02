@@ -45,6 +45,9 @@
       "tags": [],
       "implicitDependencies": ["host-app"]
     },
+    "shared-word-service": {
+      "tags": []
+    },
     "word-cloud-app": {
       "tags": []
     },

@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import {RemoteEntryModule} from "./remote-entry/remote-entry.module";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    RemoteEntryModule,
     RouterModule.forRoot([
       {
         path: '',

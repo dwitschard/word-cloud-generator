@@ -3,7 +3,7 @@ import {FormControl} from "@angular/forms";
 import {combineLatest, forkJoin, of} from "rxjs";
 import {map, startWith, tap, withLatestFrom} from "rxjs/operators";
 import {Language, stemm} from "../../helper/stemmer";
-import {WordsService} from "../../services/words.service";
+import {WordService} from "@word-cloud-generator/shared/word-service";
 
 @Component({
   selector: 'word-cloud-generator-word-cloud',
@@ -25,7 +25,7 @@ export class WordCloudComponent implements OnInit{
 
   words = of();
 
-  constructor(private wordsService: WordsService) {
+  constructor(private wordsService: WordService) {
   }
 
   ngOnInit(): void {
@@ -42,7 +42,7 @@ export class WordCloudComponent implements OnInit{
           if (!checked) {
             return storedWords.map(word => word.text);
           } else {
-            return storedWords.map(word => stemm(language, word.text));
+            return storedWords.filter(word => word.text).map(word => stemm(language, word.text));
         }
       }),
       tap(console.log)
