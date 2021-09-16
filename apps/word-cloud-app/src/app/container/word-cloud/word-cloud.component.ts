@@ -8,7 +8,8 @@ import {WordService} from "@word-cloud-generator/shared/word-service";
 @Component({
   selector: 'word-cloud-generator-word-cloud',
   templateUrl: './word-cloud.component.html',
-  styleUrls: ['./word-cloud.component.scss']
+  styleUrls: ['./word-cloud.component.scss'],
+  providers: [WordService],
 })
 export class WordCloudComponent implements OnInit{
 

@@ -6,8 +6,9 @@ import {WordCloudComponent} from '../container/word-cloud/word-cloud.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {AngularFireModule} from "@angular/fire/compat";
-import {environment} from "../../../../admin-app/src/environments/environment";
+
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {environment} from "../../environments/environment";
 
 @NgModule({
   declarations: [RemoteEntryComponent, WordCloudComponent],

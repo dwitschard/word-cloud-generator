@@ -6,7 +6,8 @@ import {WordFormService} from "../word-form.service";
 @Component({
   selector: 'adm-app-word-form',
   templateUrl: './word-form.component.html',
-  styleUrls: ['./word-form.component.scss']
+  styleUrls: ['./word-form.component.scss'],
+  providers: [WordService],
 })
 
 

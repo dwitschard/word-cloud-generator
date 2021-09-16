@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import {Word} from "./models/word";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class WordService {
 
   constructor(private firestore: AngularFirestore) { }
